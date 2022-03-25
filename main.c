@@ -1,6 +1,8 @@
+#include <stdio.h>
+
 int findBombs(int rows, int cols, int matrix[rows][cols]) {
   int count = 0;
-  
+
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {
       int o = 0;
@@ -27,6 +29,14 @@ int findBombs(int rows, int cols, int matrix[rows][cols]) {
       }
     }
   }
-  
+
   return count;
+}
+
+int main(void) {
+  const int rows = 4, cols = 4;
+  int matrix[rows][cols] = { { 1, 2, 3, 4}, { 4, 7, 3, 1 }, { 2, 3, 1, 3 }, { 4, 2, 3, 1 } };
+  int out = findBombs(rows, cols, matrix);
+  printf("out: %d\n", out);
+  return 0;
 }
